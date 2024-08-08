@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window size notation</title>
+  </head>
+  <body>
+    <div class="content"></div>
+
+    <script>
+      addEventListener('DOMContentLoaded', render)
+      addEventListener('resize', render)
+
+      function render() {
+        document.querySelector('.content').innerHTML = `
+         <span>window.screen: ${window.screen.width}, ${window.screen.height} - monitor size</span><br/>
+         <span>window.outer: ${window.outerWidth}, ${window.outerHeight} - browser size</span><br/>
+         <span>window.inner: ${window.innerWidth}, ${window.innerHeight} - browser page size(includes scrollbar)</span><br/>
+         <span>document.clientWidth: ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight} - browser page size(includes not scrollbar)</span>
+         `
+      }
+    </script>
+  </body>
+</html>
