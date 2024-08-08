@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinates pointer</title>
+    <style>
+      body {
+        background-color: #000;
+      }
+
+      img {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="imgs/pointer.png" id="pointer" />
+
+    <script>
+      window.addEventListener('mousemove', onResize)
+
+      function onResize(e) {
+        const pointer = document.querySelector('#pointer')
+        const pointerRect = pointer.getBoundingClientRect()
+        const pointerHalfWidth = e.clientX - pointerRect.width / 2
+        const pointerHalfHeight = e.clientY - pointerRect.height / 2
+
+        pointer.style.transform = `translate(${pointerHalfWidth}px, ${pointerHalfHeight}px)`
+      }
+    </script>
+  </body>
+</html>

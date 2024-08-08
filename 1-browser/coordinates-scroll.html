@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinates scroll</title>
+    <style>
+      body {
+        background-color: #000;
+        background: url('imgs/background.png') no-repeat center center / cover;
+        background-attachment: fixed;
+      }
+
+      img {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <button>클릭</button>
+    <div class="content">
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-yellow.png" id="character-yellow" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+      <img src="imgs/character-red.png" />
+    </div>
+
+    <script>
+      const btn = document.querySelector('button')
+
+      btn.addEventListener('click', onClick)
+
+      function onClick() {
+        const el = document.querySelector('#character-yellow')
+        el.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+          inline: 'center',
+        })
+        el.style.transform = 'scale(3.5)'
+        el.style.transition = 'all 3000ms ease'
+      }
+    </script>
+  </body>
+</html>
