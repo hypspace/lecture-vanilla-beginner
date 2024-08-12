@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinates movement</title>
+    <style>
+      body {
+        background-color: #000;
+      }
+
+      nav {
+        position: fixed;
+        right: 10px;
+      }
+
+      .content div {
+        width: 100px;
+        height: 100px;
+        background-color: #999;
+        margin-bottom: 3px;
+        border-radius: 3px;
+      }
+
+      div.special {
+        background-color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <button id="scroll-by">scroll by 100px</button>
+      <button id="scroll-to">scroll to 100px</button>
+      <button id="scroll-into">scroll into special</button>
+    </nav>
+
+    <div class="content">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="special"></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <script>
+      const nav = document.querySelector('nav')
+      const special = document.querySelector('.special')
+
+      nav.addEventListener('click', onClickButton)
+      special.addEventListener('click', printLog)
+
+      function onClickButton(e) {
+        if (!e.target.id) return
+        const options = { top: 100, behavior: 'smooth' }
+        if (e.target.id === 'scroll-by') window.scrollBy(options)
+        if (e.target.id === 'scroll-to') window.scrollTo(options)
+        if (e.target.id === 'scroll-into')
+          special.scrollIntoView({ behavior: options.behavior })
+      }
+
+      function printLog(e) {
+        console.log(e.target.getBoundingClientRect())
+        console.log(
+          `pageX: ${e.pageX}\n` +
+            `pageY: ${e.pageY}\n` +
+            `clientX: ${e.clientX}\n` +
+            `clientY: ${e.clientY}`
+        )
+      }
+    </script>
+  </body>
+</html>

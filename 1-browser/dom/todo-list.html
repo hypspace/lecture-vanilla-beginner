@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo list</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>투두리스트</h1>
+      </header>
+
+      <main>
+        <ul>
+          <li>
+            <span>할 일</span>
+            <button class="btn-delete">
+              <img src="imgs/icon-delete.svg" />
+            </button>
+          </li>
+          <li>
+            <span>할 일</span>
+            <button class="btn-delete">
+              <img src="imgs/icon-delete.svg" />
+            </button>
+          </li>
+        </ul>
+
+        <form>
+          <input type="text" placeholder="할 일을 입력하세요..." autofocus />
+          <button type="submit">추가</button>
+        </form>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 투두리스트 애플리케이션</p>
+      </footer>
+    </div>
+  </body>
+</html>

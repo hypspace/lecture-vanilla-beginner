@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event stopPropagation vs stopImmediatePropagation</title>
+    <style>
+      .container {
+        padding: 20px;
+        border: 2px solid black;
+        margin: 10px;
+      }
+
+      .inner {
+        padding: 20px;
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="outer">
+      Outer Div (Container)
+      <div class="inner" id="inner">Inner Div</div>
+    </div>
+
+    <script>
+      const outerDiv = document.getElementById('outer')
+      const innerDiv = document.getElementById('inner')
+
+      outerDiv.addEventListener('click', () => {
+        console.log('Outer Div (Container) - Bubbling Phase')
+      })
+
+      innerDiv.addEventListener('click', e => {
+        console.log('Inner Div - Bubbling Phase')
+        // e.stopPropagation() // 이벤트 전파를 막지만, 같은 요소에서 등록된 다른 이벤트 리스너는 실행
+        // e.stopImmediatePropagation() // 이벤트 전파를 막고, 같은 요소에서 등록된 다른 이벤트 리스너도 실행되지 않음
+      })
+
+      innerDiv.addEventListener('click', () => {
+        console.log('Another Inner Div Clicked')
+      })
+
+      outerDiv.addEventListener('click', () => {
+        console.log('Another Outer Div Clicked')
+      })
+    </script>
+  </body>
+</html>
