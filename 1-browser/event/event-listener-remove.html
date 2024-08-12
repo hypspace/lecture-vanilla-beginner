@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event listener remove</title>
+  </head>
+  <body>
+    <button id="btn">click me</button>
+    <button id="btn-remove">remove click listener</button>
+
+    <script>
+      const btn = document.getElementById('btn')
+      const btnRemoveListener = document.getElementById('btn-remove')
+
+      function onClick() {
+        console.log('clicked')
+      }
+
+      function onRemove() {
+        btn.removeEventListener('click', onClick)
+        console.log('btn event listener removed')
+      }
+
+      btn.addEventListener('click', onClick)
+      btnRemoveListener.addEventListener('click', onRemove)
+    </script>
+  </body>
+</html>
