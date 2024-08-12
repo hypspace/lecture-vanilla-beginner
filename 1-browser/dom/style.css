@@ -1,0 +1,103 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+#app {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: #007bff;
+  color: #fff;
+}
+
+main {
+  padding: 20px;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+  max-height: 350px;
+  overflow-y: scroll;
+}
+
+ul::-webkit-scrollbar {
+  display: none;
+}
+
+li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+span {
+  margin-right: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+button.btn-delete {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button.btn-delete:hover {
+  filter: invert(35%) sepia(99%) saturate(7485%) hue-rotate(360deg)
+    brightness(101%) contrast(101%);
+}
+
+button img {
+  width: 25px;
+}
+
+form {
+  display: flex;
+}
+
+form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
