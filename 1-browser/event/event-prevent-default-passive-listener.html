@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event preventDefault and passive event listener</title>
+    <style>
+      div {
+        width: 150px;
+        height: 150px;
+        background-color: #333;
+        margin-bottom: 3px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="checkbox" />
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+      document.addEventListener(
+        'wheel',
+        e => {
+          e.preventDefault()
+          console.log('wheeled')
+        },
+        { passive: false }
+      ) // passive: false - 브라우저 성능 최적화에 대한 이점을 포기하고 브라우저 wheel 이벤트 동작을 취소하겠다는 의미
+    </script>
+  </body>
+</html>
