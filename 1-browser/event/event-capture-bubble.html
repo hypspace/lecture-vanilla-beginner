@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event capturing and bubbling</title>
+    <style>
+      .container {
+        padding: 20px;
+        border: 2px solid black;
+        margin: 10px;
+      }
+      .inner {
+        padding: 20px;
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="outer">
+      Outer Div (Container)
+      <div class="inner" id="inner">Inner Div</div>
+    </div>
+
+    <script>
+      const outerDiv = document.getElementById('outer')
+      const innerDiv = document.getElementById('inner')
+
+      outerDiv.addEventListener('click', e => {
+        console.log('Outer Div (Container) - Bubbling Phase')
+        // e.target: 지금 클릭된 요소
+        // e.currentTarget: 클릭 위치와 상관없이 이벤트 리스너가 등록되어 있는 요소
+        console.log(e.target, e.currentTarget) // div#inner.inner, div#outer.container
+
+        // if (e.target !== e.currentTarget) return // 👍🏻 good
+        // e.stopPropagation() // 👎🏻 bad
+      })
+
+      innerDiv.addEventListener('click', e => {
+        console.log('Inner Div - Bubbling Phase')
+      })
+    </script>
+  </body>
+</html>

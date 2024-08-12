@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event keydown vs keyup</title>
+  </head>
+  <body>
+    <script>
+      addEventListener('keydown', e => console.log('keydown: ' + e.key)) // 키를 눌렀을 때 즉시 발생
+      addEventListener('keyup', e => console.log('keyup: ' + e.key)) // 키를 누르고 떼었을 때 발생
+    </script>
+  </body>
+</html>
