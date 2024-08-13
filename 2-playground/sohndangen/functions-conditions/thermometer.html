@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a thermometer</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .thermometer {
+        position: relative;
+        width: 80px;
+        height: 300px;
+        border-radius: 40px;
+        background: #fff;
+        border: 5px solid #333;
+      }
+
+      .bulb {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #ff4d4d;
+        border: 5px solid #333;
+        cursor: pointer;
+      }
+
+      .bulb.active {
+        width: 75px;
+        height: 75px;
+      }
+
+      .tube {
+        position: absolute;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 200px;
+        background: #ddd;
+        border-radius: 10px;
+        border: 3px solid #333;
+        overflow: hidden;
+      }
+
+      .mercury {
+        width: 100%;
+        background: #ff4d4d;
+        height: 0;
+        border-radius: 10px 10px 0 0;
+        transition: height 300ms ease;
+      }
+    </style>
+    <script src="thermometer.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="thermometer">
+        <div class="bulb"></div>
+        <div class="tube" onclick="increment">
+          <div class="mercury"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
