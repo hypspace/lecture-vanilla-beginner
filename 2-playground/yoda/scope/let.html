@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scope - let</title>
+  </head>
+  <body>
+    <script>
+      // 설명: ES6 이전에는 함수 단위의 스코프만 존재. var 키워드만 있었기 때문. ES6는 let & const 라는 키워드가 추가되면서
+      //  변수 접근 유무가 달라짐
+
+      // 1. var:
+      function foo() {
+        for (var i = 0; i < 100; i++) {}
+        console.log(i) // 100 => 접근가능: i는 스코프 체인을 따라 변수를 찾음
+      }
+
+      foo()
+
+      // 2. let
+      function foo2() {
+        for (let i = 0; i < 100; i++) {}
+        console.log(i) // error: i is not defined => 접근불가
+      }
+
+      foo2()
+    </script>
+  </body>
+</html>
+The Scope of let

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scope - const and immutable array, object</title>
+  </head>
+  <body>
+    <script>
+      // 설명: const는 재할당하는 것만 불가능. 그러나 배열 또는 객체 내부 속성값을 변경시키는 것은 가능(데이터타입 - 메모리 참조 방식 참고)
+
+      const arr = [1, 2, 3]
+      arr.push(4) // [1, 2, 3, 4]
+
+      // immutable array의 장점이나 쓰임새는?
+      //  - 에디터 저장하기에서 뒤로가기 또는 앞으로가기에서 유용: array 또는 object는 참조가 바뀌기 때문에 뒤 또는 앞으로가기가 불가능(전 데이터를 기억하지 못하기 때문)
+      //     그래서 값을 저장해놓고(불변) 카피본을 뜨는 것(불변 객체 || 배열을 만드는 것)
+
+      // 그럼, immutable array 또는 object는 어떻게 만드는지? (새로운 배열을 반환하는 메서드[] || Spread operator)
+
+      // 불변 배열 생성 패턴
+      //  - concat, map, filter
+
+      // 불변 객체 생성 패턴
+      //  - Object.assign, Object.entries, Object.fromEntries
+      //  - Spread operator(전개 연산자)
+
+      // 기타 불변 생성 방식
+      //  - immutable.js 라이브러리
+
+      // concat
+      const originalArray = [1, 2, 3]
+      console.log(originalArray.concat(4, 5)) // [1, 2, 3, 4, 5]
+
+      // map
+      const originalArray2 = [1, 2, 3]
+      console.log(originalArray2.map(x => x * 2)) // [2, 4, 6]
+
+      // filter
+      const originalArray3 = [1, 2, 3]
+      console.log(originalArray3.filter(x => x > 2)) // [3]
+
+      // assign
+      const originalObject = { a: 1, b: 2 }
+      console.log(Object.assign({}, originalObject, { c: 3 })) // {a: 1, b: 2, c: 3}
+
+      // Object.entries or Object.fromEntries
+      const originalObject2 = { a: 1, b: 2 }
+      console.log(
+        Object.fromEntries(
+          Object.entries(originalObject).map(([key, value]) => [key, value * 2])
+        )
+      ) // {a: 2, b: 4}
+
+      // spread operator
+      const originalArray4 = [1, 2, 3]
+      console.log([0, ...originalArray4]) // [0, 1, 2, 3]
+
+      const originalObject3 = { a: 1, b: 2 }
+      console.log({ x: 0, ...originalObject3 }) // {x: 0, a: 1, b: 2}
+    </script>
+  </body>
+</html>
