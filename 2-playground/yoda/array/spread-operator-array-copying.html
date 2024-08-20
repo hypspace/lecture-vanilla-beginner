@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array - spread operator and array copying</title>
+  </head>
+  <body>
+    <script>
+      // 설명: spread operator는 배열 또는 객체의 내부 요소를 개별 요소로 펼쳐서 복사, 병합, 분산 등을 간결하게 처리할 수 있게 함.
+      //  카피본을 뜨는 것. 불변한 데이터를 만드는 것과 같음. 참조를 끊고 새로운 배열을 만드는 대신, 원시 데이터는 참조값이 그대로 유지됨
+
+      // spread operator
+      const arr = [1, 2, 3]
+      const newArr = [...arr]
+
+      console.log(arr === newArr) // false
+      console.log(arr[0] === newArr[0]) //true
+    </script>
+  </body>
+</html>
