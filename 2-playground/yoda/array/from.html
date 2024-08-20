@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array - from and create a real array</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+
+    <script>
+      // 설명: Array.from은 유사 배열 객체나 이터러블 객체로부터 새로운 배열 인스턴스 생성함.
+      //  그래서 유사 배열(가짜 배열) 객체를 from 메서드로 감싸서 배열로 변환하여 순회
+
+      // 전
+      function func() {
+        console.log(arguments) // Arguments(3) [1, 2, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+        console.log(Array.prototype.slice.call(arguments)) // [1, 2, 3]
+      }
+
+      func(1, 2, 3)
+
+      // 전2
+      const li = document.querySelectorAll('li')
+
+      console.log('data-type: ', toString.call(li)) // 'data-type: [object NodeList]'
+      console.log(Array.prototype.slice.call(li)) // [li, li, li]
+      console.log('data-type: ', toString.call(Array.prototype.slice.call(li))) // 'data-type: [object Array]'
+
+      // 후
+      console.log(Array.from(li), toString.call(Array.from(li))) // [li, li, li], '[object Array]'
+
+      // 기타 패턴 - event binding을 위해서 li를 다 찾아서 Array.from을 쓴다면, 다른 방법으로는 event delegation 패턴도 있음
+      const ul = document.querySelector('ul')
+      ul.addEventListener('click', e => onClick(e.target.dataset))
+
+      function onClick(dataset) {
+        // ...
+      }
+    </script>
+  </body>
+</html>
