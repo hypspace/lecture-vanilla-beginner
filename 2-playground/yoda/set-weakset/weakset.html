@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeakSet - storing object types effectively</title>
+  </head>
+  <body>
+    <script>
+      // 설명: 참조를 가지고 있는 객체만 저장 가능. 객체 형태를 중복 없이 저장하려고 할 때 유용
+      //  WeakSet의 장점은 추가시킨 객체가 null되면 가비지 컬렉션 대상이 됨
+      //  그래서 자동으로 그 정보가 없어짐. 참조를 WeakSet에서 계속 모니터링 하는 것
+
+      const arr = 1
+      // weakArr.add(arr) // Error: Invalid value used in weak set
+
+      const weakArr = new WeakSet()
+
+      let arr2 = [1, 2, 3]
+      weakArr.add(arr2, function () {}) // WeakSet {Array(3)}
+      weakArr.add(function () {}) // WeakSet {Array(3), ƒ}
+
+      console.log(weakArr.has(arr2)) // true
+      arr2 = null
+      console.log(weakArr.has(arr2)) // false
+    </script>
+  </body>
+</html>
