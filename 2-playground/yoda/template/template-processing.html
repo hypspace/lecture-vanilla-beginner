@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template - template processing</title>
+  </head>
+  <body>
+    <script>
+      // 설명: 일반적으로 JSON으로 응답을 받고 객체로 변환한 다음 데이터 처리를 하고 나서 DOM UI 업데이트를 함
+      //  최근에는 이 작업이 워낙 많아서 리액트 또는 앵귤러, 뷰 같은 Virtual DOM과 같은 개념을 도입해서 템플릿 작업조차도
+      //  라이브러리 또는 프레임워크 단에서 할 수 있게 지원이 되고 있음. 이전에는 underscore 또는 mustache, handlebar 같은 JS 템플릿 라이브러리를 쓰고 있는데
+      //  ES6 템플릿은 그러한 부분을 많이 포함하고 있음
+
+      const data = [
+        {
+          id: 1,
+          name: 'wang',
+          comment:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, totam.',
+        },
+        {
+          id: 1,
+          name: 'bob',
+          comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        },
+      ]
+
+      const template = `<span>${data[0].name}: ${data[0].comment}</span>`
+      console.log(template) // <span>wang: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, totam.</span>
+    </script>
+  </body>
+</html>
