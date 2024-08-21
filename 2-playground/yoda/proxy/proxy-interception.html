@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proxy - proxy interception</title>
+  </head>
+  <body>
+    <script>
+      // 설명: 프록시는 객체가 있을 때 해당 객체를 가로채서 다른 작업을 할 수 있게 도와줌
+      //  이것 때문에 FE 레벨에서 할 수 없었던 것을 한다고 볼 수는 없고 해당 객체가 추가, 변경 혹은 삭제되거나 그 객체 값을
+      //  얻으려 했을 때 부수적인 일들을 중간에 가로채서 집어넣을 수 있음. 참고로 axios를 알고 있다면 axios.Interceptors와 같다고
+      //  생각할 수 있는데 두 가지 모두 가로채기를 하지만 적용 대상과 사용 방식이 다름. proxy는 일반 객체에 속성 접근과 수정에 관한 것이며
+      //  axios 인터셉터는 HTTP 요청과 응답에 관련된 것. 그래서 proxy는 객체 동작을 세밀하게 제어할 때 유용하며, axios 인터셉터는
+      //  api 호출의 전후 처리에 중점을 둠
+
+      const obj = {
+        name: 'wang',
+      }
+
+      const proxy = new Proxy(obj, {}) // new Proxy(target, handler)
+      console.log(proxy) // Proxy(Object) {name: 'wang'} - 래핑한 것 아닌가 할 수 있는데 맞음
+
+      //  obj에 있는 속성들을 변경하거나 얻으려 했을 때, 중간에 가로채서 작업을 하는 컨셉. 그걸 handler에서 하는 것
+      //  대표적으로 get & set이 있음
+      //  또한 proxy를 활용해서 사용자의 클릭 로깅을 재는 등의 기능 구현을 할 수 있음
+
+      const myObj = {
+        name: 'bob',
+        changeValue: 0,
+      }
+
+      const myProxy = new Proxy(myObj, {
+        // receiver: 객체 자체 - 여기서는 myProxy
+        get(target, property, receiver) {
+          console.log('get(): get value')
+          // Reflect.get(target, property) 와 동일 - Reflect는 객체 안에 있는 속성값을 뽑아낼 때 쓸 수 있는 방법. 프록시에서는
+          // 프록시에서는 target[property] 이런식으로 해서 뽑아내는 것 보다는 Reflect를 쓰라고 권장하고 있음
+          // 프록시는 값을 가로채는것 자체로 의미가 있고 target[property] 이렇게 값을 반환하는 것은 프록시 역할이 아니라고 하는 사람들이 있어서 그런 듯
+          // 그런데 리플렉트로 분기처리 그러니까 없는 값에 대한 처리를 하는 것은 어려울 수 있는데 if문으로 가능함(맨 아래 const myProxy3 참고)
+          return target[property]
+        },
+        set(target, property, value) {
+          console.log('set(): set value')
+          target.changeValue++ // 이하 동일 - target['changeValue']++
+          target[property] = value
+        },
+      })
+
+      myProxy.name = 'song' // 'set(): set value'
+      myProxy.name // 'get(): get value'
+      console.log(myProxy.name) // 'song'
+
+      myProxy.name = 'kim'
+      myProxy.name = 'park'
+      console.log(myProxy['changeValue']) // 3
+      myObj.name = 'yu'
+      console.log(myProxy['changeValue']) // 3 - myObj.name에 접근한다면 changeValue가 올라가지 않음
+
+      // ******************************************************************************************
+      // if문에서 in 예약어 쓸 수 있음. in은 객체 프로퍼티가 존재하는지 확인하는 데 사용됨.
+      // 예를 들어, 객체 특정 속성이 있는지 확인할 때 in을 사용함
+      const person = {
+        name: 'Alice',
+        age: 30,
+      }
+
+      if ('name' in person) {
+        console.log('yes') // 'yes'
+      }
+
+      const myProxy3 = new Proxy(myObj, {
+        get(target, property, receiver) {
+          return property in target ? target[property] : 'anonymous'
+        },
+        set(target, property, value) {
+          console.log('set(): set value')
+          target.changeValue++ // 이하 동일 - target['changeValue']++
+          target[property] = value
+        },
+      })
+
+      console.log(myProxy3.name) // 'yu'
+      console.log(myProxy3.address) // 'anonymous'
+    </script>
+  </body>
+</html>
