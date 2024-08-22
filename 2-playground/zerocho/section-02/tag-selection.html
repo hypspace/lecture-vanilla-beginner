@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tag selection using querySelector</title>
+  </head>
+  <body>
+    <form action="" id="search-form">
+      <input type="text" />
+      <button type="reset"></button>
+    </form>
+
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+    </ul>
+
+    <script>
+      // 1. document.querySelector
+      const reset = document.querySelector('[type="reset"]')
+
+      // 2. document.getElementById
+      const searchForm = document.getElementById('search-form')
+
+      // 3. document.querySelectorAll
+      const lists = document.querySelectorAll('li')
+      console.log(lists)
+    </script>
+  </body>
+</html>

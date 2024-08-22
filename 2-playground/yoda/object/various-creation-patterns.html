@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object - various creation patterns</title>
+  </head>
+  <body>
+    <script>
+      // 설명: 객체 생성 패턴은 여러가지가 있음(객체 리터럴, 생성자 함수, Object.create, factory-functions, Object 생성자, 클로저와 IIFE 패턴)
+      //  ES6에서는 객체 생성 패턴의 강력한 몇 가지를 더 제공함(class 문법, 객체 리터럴 축약 문법, 계산된 속성 이름, getter와 setter, destructuring)
+
+      // 전 - 클로저와 IIFE 패턴
+      const createCounter = (function () {
+        let count = 0 // 은닉된 상태 변수 - encapsulation
+
+        return {
+          increment: function () {
+            count++
+            return count
+          },
+          decrement: function () {
+            count--
+            return count
+          },
+          getCount: function () {
+            return count
+          },
+        }
+      })()
+
+      console.log(createCounter.increment()) // 1
+      console.log(createCounter.increment()) // 2
+      console.log(createCounter.getCount()) // 2
+      console.log(createCounter.decrement()) // 1
+      console.log(createCounter.getCount()) // 1
+
+      // 후 - 객체 리터럴 축약 문법
+      const createCounter2 = (function () {
+        let count = 0
+
+        return {
+          increment() {
+            count++
+            return count
+          },
+          decrement() {
+            count--
+            return count
+          },
+          getCount() {
+            return count
+          },
+        }
+      })()
+    </script>
+  </body>
+</html>
