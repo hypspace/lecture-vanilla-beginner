@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS - keyframes</title>
+    <style>
+      @keyframes slide-in {
+        0% {
+          border-radius: 0%;
+          background-color: bisque;
+        }
+        50% {
+          background-color: pink;
+        }
+
+        100% {
+          border-radius: 100%;
+          background-color: black;
+        }
+      }
+
+      .box1 {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        background-color: chocolate;
+        animation: 5s slide-in;
+      }
+      .box2 {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        background-color: chocolate;
+        animation: 5s infinite slide-in;
+      }
+      .box3 {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        background-color: chocolate;
+        animation: 5s infinite alternate slide-in;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </body>
+</html>
