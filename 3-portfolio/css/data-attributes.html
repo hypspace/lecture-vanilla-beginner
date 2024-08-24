@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS - data attributes</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: tomato;
+        margin-bottom: 50px;
+      }
+      div[data-index='1'] {
+        background-color: aliceblue;
+        color: blueviolet;
+      }
+      span[data-display-name='lorem'] {
+        background-color: royalblue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-index="1">Lorem</div>
+    <span data-display-name="lorem">Lorem, ipsum dolor.</span>
+
+    <script>
+      const lorem = document.querySelector('span[data-display-name="lorem"]')
+    </script>
+  </body>
+</html>
