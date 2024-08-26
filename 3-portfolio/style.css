@@ -51,3 +51,43 @@ button {
 button:hover {
   outline: 1px solid var(--color-accent);
 }
+
+/* Header */
+header {
+  background-color: var(--color-primary);
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+/* if performance is considered, use 'header__logo' */
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+header .logo img {
+  width: 36px;
+  height: 36px;
+}
+
+header .logo h1 {
+  font-size: 1.8rem;
+}
+
+header nav .menu {
+  display: flex;
+  gap: 24px;
+}
+
+header nav .menu li:hover {
+  border-bottom: 1px solid var(--color-accent);
+}
+
+header nav .menu li.active {
+  border-bottom: 1px solid var(--color-accent);
+}
