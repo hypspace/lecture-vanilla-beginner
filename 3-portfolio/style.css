@@ -52,6 +52,20 @@ button:hover {
   outline: 1px solid var(--color-accent);
 }
 
+/* Common */
+section {
+  padding: 4rem;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.5rem;
+}
+
+section p {
+  font-size: 2rem;
+}
+
 /* Header */
 header {
   background-color: var(--color-primary);
@@ -90,4 +104,44 @@ header nav .menu li:hover {
 
 header nav .menu li.active {
   border-bottom: 1px solid var(--color-accent);
+}
+
+/* Main */
+
+/* Main - home */
+#home {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+#home img {
+  width: 500px;
+  height: 500px;
+  /* object-fit: cover; :resize and crop an image or video to fill its container while maintaining its aspect ratio. */
+  object-fit: cover;
+  border: 1px solid var(--color-accent);
+  border-radius: 100%;
+}
+
+#home h2 strong {
+  color: var(--color-accent);
+}
+
+#home a[href='#contact'] {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  margin-top: 1rem;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-radius: 2px;
+  font-weight: bolder;
+  transition: all 250ms ease;
+}
+
+#home a[href='#contact']:hover {
+  background-color: transparent;
+  outline: 1px solid var(--color-accent);
+  color: var(--color-accent-variant);
 }
