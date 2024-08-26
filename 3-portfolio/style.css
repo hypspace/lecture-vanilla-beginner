@@ -272,3 +272,105 @@ header nav .menu li.active {
 #skill .skills article li div:last-child div {
   background-color: var(--color-accent);
 }
+
+/* Main - Work */
+#work {
+  background-color: var(--color-primary);
+  max-width: unset;
+  color: var(--color-text);
+}
+
+#work .categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+#work .categories li {
+  position: relative;
+}
+
+#work .categories li button {
+  color: var(--color-text);
+  padding: 0.2rem 3rem;
+  font-size: 1.5rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#work .categories li button.selected {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+#work .categories li span {
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  background-color: var(--color-accent-variant);
+  border-radius: 100%;
+  color: var(--color-text);
+  opacity: 0;
+  transition: all 200ms ease;
+}
+
+#work .categories li button.selected span,
+#work .categories li:hover span {
+  opacity: 1;
+  top: 6px;
+}
+
+#work .projects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#work .projects li {
+  position: relative;
+}
+
+#work .projects img {
+  width: 100%;
+}
+
+#work .projects div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 250ms ease;
+}
+
+#work .projects div:hover {
+  opacity: 0.8;
+  transform: translateY(0px);
+}
+
+#work .projects div h3::after {
+  content: '';
+  display: block;
+  position: relative;
+  left: 50%;
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: translateX(-50%);
+}
