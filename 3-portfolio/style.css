@@ -77,6 +77,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
+  /* z-index: 1000; :navigation bar visibility problem due to filter: brightness(180%) and z-index layering */
+  z-index: 1000;
 }
 
 /* if performance is considered, use 'header__logo' */
@@ -92,12 +94,16 @@ header .logo img {
 }
 
 header .logo h1 {
-  font-size: 1.8rem;
+  font-size: 3rem;
 }
 
 header nav .menu {
   display: flex;
   gap: 24px;
+}
+
+header nav .menu li {
+  font-size: 1.5rem;
 }
 
 header nav .menu li:hover {
@@ -199,4 +205,70 @@ header nav .menu li.active {
 
 #about .jobs li p:last-child {
   font-size: 1.2rem;
+}
+
+/* Main - Skill */
+#skill {
+  background-color: var(--color-primary-variant);
+  color: var(--color-text);
+  max-width: unset;
+}
+
+#skill .skills {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.38);
+}
+
+#skill .skills article {
+  padding: 1rem 2rem;
+  background-color: var(--color-primary);
+}
+
+#skill .skills article:first-child {
+  grid-row: span 2;
+}
+
+#skill .skills article:nth-child(2) {
+  filter: brightness(180%);
+}
+
+#skill .skills article:nth-child(3) {
+  filter: brightness(150%);
+}
+
+#skill .skills article h3 {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+}
+
+#skill .skills article li {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+}
+
+#skill .skills article:first-child li {
+  padding: 1.5rem 0;
+}
+
+#skill .skills article:not(:first-child) li {
+  padding: 0.8rem 0;
+}
+
+#skill .skills article li div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+#skill .skills article li div:last-child {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-primary-variant);
+}
+
+#skill .skills article li div:last-child div {
+  background-color: var(--color-accent);
 }
