@@ -60,12 +60,22 @@ section {
   margin: auto;
 }
 
-section h2 {
+section h2,
+footer h2 {
   font-size: 2.5rem;
 }
 
-section p {
+section p,
+footer p {
   font-size: 2rem;
+}
+
+#home,
+footer {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  text-align: center;
+  max-width: unset;
 }
 
 /* Header */
@@ -119,11 +129,7 @@ header nav .menu li.active {
 
 /* Main - Home */
 #home {
-  background-color: var(--color-primary);
-  color: var(--color-text);
   padding: 5rem 0;
-  text-align: center;
-  max-width: unset;
 }
 
 #home img {
@@ -403,5 +409,21 @@ header nav .menu li.active {
 }
 
 #testimonial .testimonials div a {
+  color: var(--color-accent);
+}
+
+/* Footer */
+#contact .links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 3rem;
+}
+
+#contact .links li a {
+  transition: color 200ms ease;
+}
+
+#contact .links li a:hover {
   color: var(--color-accent);
 }
