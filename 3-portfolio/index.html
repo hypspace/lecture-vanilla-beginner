@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="hypspace" />
+    <meta name="description" content="hypspace portfolio" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <title>hypspace portfolio</title>
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon" />
+    <meta property="og:title" content="hypspace portfolio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/cfb1d48836.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="src/main.js" defer></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="imgs/favicon.ico" alt="logo" />
+        <h1><a href="#">HYPSPACE</a></h1>
+      </div>
+      <nav>
+        <ul class="menu">
+          <li class="active"><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#testimonial">Testimonial</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <!-- home -->
+      <section id="home">
+        <img src="imgs/profile.png" alt="author profile" />
+        <h2>Hello I&#39;m <strong>HYPSPACE</strong></h2>
+        <p>A software engineer currently residing in Seoul, South Korea</p>
+        <a href="#contact">Contact Me</a>
+      </section>
+      <!-- about -->
+      <section id="about">
+        <h2>About me</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
+          ducimus. Dolore nemo blanditiis suscipit, ipsam aspernatur quasi saepe
+          odit! Pariatur quae repudiandae minus magni animi neque rem, illo
+          dolore molestiae.
+        </p>
+        <ul class="majors">
+          <li>
+            <i class="fa-brands fa-html5 item"></i>
+            <p>front-end</p>
+            <p>
+              HTML, CSS, JavaScript, TypeScript, React, Vue, Web APIs, Next,
+              Nuxt
+            </p>
+          </li>
+          <li>
+            <i class="fa-solid fa-mobile item"></i>
+            <p>mobile</p>
+            <p>Android, iOS, React Native</p>
+          </li>
+          <li>
+            <i class="fa-solid fa-server item"></i>
+            <p>back-end</p>
+            <p>JavaScript, NodeJS, React APIs</p>
+          </li>
+        </ul>
+        <ul class="jobs">
+          <li>
+            <img src="imgs/jobs/company-01.png" alt="company1" />
+            <div>
+              <p>Lorem, ipsum dolor.</p>
+              <p>2019 Jan - Lorem, ipsum dolor.</p>
+            </div>
+          </li>
+          <li>
+            <img src="imgs/jobs/company-02.png" alt="company2" />
+            <div>
+              <p>Lorem, ipsum dolor.</p>
+              <p>2023 Jun - Lorem, ipsum dolor.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!-- skill -->
+      <section id="skill">
+        <h2>My Skills</h2>
+        <p>Skills & Attributes</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit
+          obcaecati deleniti, eius veritatis expedita asperiores maiores. Ex
+          porro labore blanditiis aliquid, totam optio vitae neque, illum
+          veritatis et itaque fugiat.
+        </p>
+        <div class="skills">
+          <article>
+            <h3>Coding Skills</h3>
+            <ul>
+              <li>
+                <div>
+                  <span>HTML</span>
+                  <span>98%</span>
+                </div>
+                <div>
+                  <div style="width: 98%"></div>
+                </div>
+              </li>
+              <li>
+                <div><span>CSS</span><span>99%</span></div>
+                <div><div style="width: 98%"></div></div>
+              </li>
+              <li>
+                <div><span>JS</span><span>90%</span></div>
+                <div><div style="width: 88%"></div></div>
+              </li>
+              <li>
+                <div><span>TS</span><span>80%</span></div>
+                <div><div style="width: 80%"></div></div>
+              </li>
+              <li>
+                <div><span>React</span><span>83%</span></div>
+                <div><div style="width: 83%"></div></div>
+              </li>
+              <li>
+                <div><span>Vue</span><span>88%</span></div>
+                <div><div style="width: 88%"></div></div>
+              </li>
+              <li>
+                <div><span>NodeJS</span><span>75%</span></div>
+                <div><div style="width: 88%"></div></div>
+              </li>
+            </ul>
+          </article>
+          <article>
+            <h3>Tools</h3>
+            <ul>
+              <li>Visual Studio Code</li>
+              <li>Android Studio Code</li>
+              <li>iOS development tools</li>
+              <li>Figma</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Etc</h3>
+            <ul>
+              <li>Git</li>
+              <li>Slack</li>
+              <li>Notion</li>
+              <li>Discord</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <!-- work -->
+      <section id="work">
+        <h2>My work</h2>
+        <p>Projects</p>
+        <ul class="categories">
+          <li>
+            <button>All <span>8</span></button>
+          </li>
+          <li>
+            <button>Front-end <span>3</span></button>
+          </li>
+          <li>
+            <button>Back-end <span>3</span></button>
+          </li>
+          <li>
+            <button>Mobile <span>2</span></button>
+          </li>
+        </ul>
+        <ul class="projects">
+          <li>
+            <a href="#" target="_blank">
+              <img src="imgs/projects/project-01.png" alt="project1" />
+              <div>
+                <h3>Project #1</h3>
+                <p>Clone Coding with HTML, CSS</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <img src="imgs/projects/project-02.png" alt="project2" />
+              <div>
+                <h3>Project #2</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <img src="imgs/projects/project-03.png" alt="project3" />
+              <div>
+                <h3>Project #3</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <img src="imgs/projects/project-04.png" alt="project4" />
+              <div>
+                <h3>Project #4</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <img src="imgs/projects/project-05.png" alt="project5" />
+              <div>
+                <h3>Project #5</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <img src="imgs/projects/project-06.png" alt="project6" />
+              <div>
+                <h3>Project #6</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- testimonial -->
+      <section id="testimonial">
+        <h2>Testimonial</h2>
+        <p>See what they say about me</p>
+        <ul class="testimonials">
+          <li>
+            <img src="imgs/testimonials/people-01.png" alt="people1" />
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                nemo reiciendis aperiam excepturi tempore culpa quo magnam aut?
+                Assumenda quasi aspernatur consequuntur saepe ab, ad molestias
+                perferendis nam doloribus optio.
+              </p>
+              <p><a href="#">James Kim</a> /Rocket Punch</p>
+            </div>
+          </li>
+          <li>
+            <img src="imgs/testimonials/people-02.png" alt="people2" />
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                nemo reiciendis aperiam excepturi tempore culpa quo magnam aut?
+                Assumenda quasi aspernatur consequuntur saepe ab, ad molestias
+                perferendis nam doloribus optio.
+              </p>
+              <p><a href="#">Wang Xiao</a> /Tencent</p>
+            </div>
+          </li>
+          <li>
+            <img src="imgs/testimonials/people-03.png" alt="people3" />
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                nemo reiciendis aperiam excepturi tempore culpa quo magnam aut?
+                Assumenda quasi aspernatur consequuntur saepe ab, ad molestias
+                perferendis nam doloribus optio.
+              </p>
+              <p><a href="#">Yujin Han</a> /Makestar</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!-- arrow up -->
+      <aside>
+        <!-- seo: properties for screen readers, title=".." -->
+        <a href="#home" title="back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <h2>Let&#39;s talk</h2>
+      <p>hypspacecraft@gmail.com</p>
+      <ul class="links">
+        <li>
+          <a href="#" target="_blank" title="my github link">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" title="my linkedin link">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" title="my rocketpunch link">
+            <i class="fa-solid fa-rocket"></i>
+          </a>
+        </li>
+      </ul>
+      <p>©️HYPSPACE - All rights reserved</p>
+    </footer>
+  </body>
+</html>
