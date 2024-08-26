@@ -107,16 +107,17 @@ header nav .menu li {
 }
 
 header nav .menu li:hover {
-  border-bottom: 1px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  transition: border-bottom 200ms ease;
 }
 
 header nav .menu li.active {
-  border-bottom: 1px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
 }
 
 /* Main */
 
-/* Main - home */
+/* Main - Home */
 #home {
   background-color: var(--color-primary);
   color: var(--color-text);
@@ -130,7 +131,7 @@ header nav .menu li.active {
   height: 500px;
   /* object-fit: cover; :resize and crop an image or video to fill its container while maintaining its aspect ratio. */
   object-fit: cover;
-  border: 1px solid var(--color-accent);
+  border: 5px solid var(--color-accent);
   border-radius: 100%;
 }
 
@@ -145,13 +146,14 @@ header nav .menu li.active {
   background-color: var(--color-accent);
   color: var(--color-primary);
   border-radius: 2px;
+  font-size: 1.5rem;
   font-weight: bolder;
   transition: all 250ms ease;
 }
 
 #home a[href='#contact']:hover {
   background-color: transparent;
-  outline: 1px solid var(--color-accent);
+  outline: 2px solid var(--color-accent);
   color: var(--color-accent-variant);
 }
 
@@ -295,7 +297,7 @@ header nav .menu li.active {
   color: var(--color-text);
   padding: 0.2rem 3rem;
   font-size: 1.5rem;
-  border: 1px solid var(--color-accent);
+  border: 2px solid var(--color-accent);
   border-radius: 4px;
   cursor: pointer;
   white-space: nowrap;
@@ -323,7 +325,7 @@ header nav .menu li.active {
 #work .categories li button.selected span,
 #work .categories li:hover span {
   opacity: 1;
-  top: 6px;
+  top: 8px;
 }
 
 #work .projects {
@@ -373,4 +375,33 @@ header nav .menu li.active {
   height: 2px;
   background-color: var(--color-accent);
   transform: translateX(-50%);
+}
+
+/* Main - Testimonial */
+#testimonial .testimonials {
+  margin: 3rem 0;
+}
+
+#testimonial .testimonials li {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+#testimonial .testimonials li img {
+  border-radius: 100%;
+  box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
+}
+
+#testimonial .testimonials li:nth-child(even) img {
+  order: 1;
+}
+
+#testimonial .testimonials div {
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.38);
+}
+
+#testimonial .testimonials div a {
+  color: var(--color-accent);
 }
