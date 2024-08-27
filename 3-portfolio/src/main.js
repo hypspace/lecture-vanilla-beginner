@@ -15,8 +15,14 @@ function handleScrollSection(el, headerEl) {
   if (!el || !headerEl) return
   const rect = el.getBoundingClientRect()
   rect.top < headerEl.scrollHeight && rect.bottom > 0
-    ? (el.style.filter = `blur(${Math.abs(rect.top) / 100}px)`)
+    ? (el.style.filter = `blur(${Math.abs(rect.top) / 300}px)`)
     : (el.style.filter = `none`)
+}
+
+function handleClickMenuIcon(navEl, menuIconEl) {
+  if (!navEl || !menuIconEl) return
+  navEl.classList.toggle('clicked')
+  menuIconEl.classList.toggle('clicked')
 }
 
 const onScroll = debounce(() => {
@@ -33,8 +39,28 @@ const onScroll = debounce(() => {
   sectionsEl.forEach(el => handleScrollSection(el, headerEl))
 }, 20)
 
+const onClickIcon = menuIconEl => {
+  const navEl = document.querySelector('nav')
+  if (!navEl || !menuIconEl) return
+  handleClickMenuIcon(navEl, menuIconEl)
+}
+
+const onClickList = menuIconEl => {
+  const navEl = document.querySelector('nav')
+  if (!navEl || !menuIconEl) return
+  navEl.classList.toggle('clicked')
+  menuIconEl.classList.toggle('clicked')
+}
+
 function setEventListeners() {
+  const menuIconEl = document.querySelector('i.fa-solid.fa-burger')
+  const menuListEl = document.querySelectorAll('nav li a')
+
   document.addEventListener('scroll', onScroll)
+  menuIconEl.addEventListener('click', () => onClickIcon(menuIconEl))
+  Array.from(menuListEl).forEach(item =>
+    item.addEventListener('click', () => onClickList(menuIconEl))
+  )
 }
 
 ;(function init() {

@@ -120,6 +120,7 @@ header nav .menu {
 
 header nav .menu li {
   font-size: 1.5rem;
+  border-bottom: 2px solid transparent;
 }
 
 header nav .menu li:hover {
@@ -131,8 +132,37 @@ header nav .menu li.active {
   border-bottom: 2px solid var(--color-accent);
 }
 
+header button {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  transform: translateY(15%);
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+
+header button:hover {
+  outline: none;
+}
+
+header button i {
+  transition: all 200ms ease;
+}
+
+header button i:hover {
+  transform: scale(1.2);
+}
+
+header button i.clicked {
+  transform: rotate(180deg);
+}
+
 header.scrolled {
   background-color: var(--color-accent-variant);
+}
+
+header nav.clicked {
+  display: block;
 }
 
 /* Main */
@@ -498,10 +528,18 @@ aside.scrolled {
     font-size: 2rem;
   }
 
+  header nav {
+    display: none;
+  }
+
   header nav .menu {
     flex-direction: column;
     gap: 0;
     text-align: center;
+  }
+
+  header button {
+    display: block;
   }
 
   #home {
