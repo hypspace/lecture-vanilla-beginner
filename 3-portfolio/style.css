@@ -89,6 +89,7 @@ header {
   padding: 0 1rem;
   /* z-index: 1000; :navigation bar visibility problem due to filter: brightness(180%) and z-index layering */
   z-index: 1000;
+  transition: all 300ms ease;
 }
 
 /* if performance is considered, use 'header__logo' */
@@ -124,6 +125,10 @@ header nav .menu li:hover {
 
 header nav .menu li.active {
   border-bottom: 2px solid var(--color-accent);
+}
+
+header.scrolled {
+  background-color: var(--color-accent-variant);
 }
 
 /* Main */
