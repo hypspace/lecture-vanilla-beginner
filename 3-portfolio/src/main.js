@@ -1,10 +1,14 @@
 import debounce from './utils/debounce.js'
 
-function handleScrollHeader(el) {
-  if (!el) return
-  el.offsetHeight < window.scrollY
-    ? el.classList.add('scrolled')
-    : el.classList.remove('scrolled')
+function handleScrollHeaderAndAside(headerEl, asideEl) {
+  if (!headerEl) return
+  if (headerEl.offsetHeight < window.scrollY) {
+    headerEl.classList.add('scrolled')
+    asideEl.classList.add('scrolled')
+  } else {
+    headerEl.classList.remove('scrolled')
+    asideEl.classList.remove('scrolled')
+  }
 }
 
 function handleScrollSection(el, headerEl) {
@@ -17,14 +21,15 @@ function handleScrollSection(el, headerEl) {
 
 const onScroll = debounce(() => {
   const headerEl = document.querySelector('header')
-  if (!headerEl) return
+  const asideEl = document.querySelector('aside')
+  if (!headerEl || !asideEl) return
 
   const sections = ['#home', '#about', '#skill', '#work', '#testimonial']
   const sectionsEl = sections
     .map(id => document.querySelector(id))
     .filter(Boolean)
 
-  handleScrollHeader(headerEl)
+  handleScrollHeaderAndAside(headerEl, asideEl)
   sectionsEl.forEach(el => handleScrollSection(el, headerEl))
 }, 20)
 

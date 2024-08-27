@@ -53,6 +53,11 @@ button:hover {
 }
 
 /* Common */
+header,
+aside {
+  transition: all 300ms ease;
+}
+
 section {
   padding: 4rem;
   text-align: center;
@@ -89,7 +94,6 @@ header {
   padding: 0 1rem;
   /* z-index: 1000; :navigation bar visibility problem due to filter: brightness(180%) and z-index layering */
   z-index: 1000;
-  transition: all 300ms ease;
 }
 
 /* if performance is considered, use 'header__logo' */
@@ -435,6 +439,10 @@ header.scrolled {
 }
 
 /* Aside - Arrow Up */
+aside {
+  display: none;
+}
+
 aside a {
   background-color: var(--color-accent-variant);
   position: fixed;
@@ -450,6 +458,10 @@ aside a {
 
 aside a i[class='fa-solid fa-arrow-up'] {
   line-height: 5rem;
+}
+
+aside.scrolled {
+  display: block;
 }
 
 /* Media - Small Devices (phones and tablets ≤ 768px) */
