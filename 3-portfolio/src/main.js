@@ -1,4 +1,5 @@
 import debounce from './utils/debounce.js'
+import initObserver from './utils/observer.js'
 
 function handleScrollHeaderAndAside(headerEl, asideEl) {
   if (!headerEl) return
@@ -58,11 +59,12 @@ function setEventListeners() {
 
   document.addEventListener('scroll', onScroll)
   menuIconEl.addEventListener('click', () => onClickIcon(menuIconEl))
-  Array.from(menuListEl).forEach(item =>
+  menuListEl.forEach(item =>
     item.addEventListener('click', () => onClickList(menuIconEl))
   )
 }
 
 ;(function init() {
   setEventListeners()
+  initObserver()
 })()
