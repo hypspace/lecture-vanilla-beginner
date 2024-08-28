@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS - block vs inline vs inline-block</title>
+    <style>
+      p,
+      span {
+        background-color: yellow;
+        border: 1px solid black;
+        margin: 32px;
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>display: block</h1>
+    <p>p 태그는 기본적으로 블럭 요소</p>
+    <p>p 태그는 기본적으로 블럭 요소</p>
+
+    <!--  inline: margin이 수직으로 적용되지 않고 수평으로만 적용 -->
+    <!--  inline-block: 둘 다 적용 가능 -->
+    <h1>display: inline</h1>
+    <span>span 태그는 인라인 요소</span>
+    <span>span 태그는 인라인 요소</span>
+
+    <h1>display: inline-block</h1>
+    <p class="inlineBlock">인라인 블럭 요소</p>
+    <p class="inlineBlock">인라인 블럭 요소</p>
+  </body>
+</html>
