@@ -13,6 +13,13 @@
   --color-orange: #fd6413;
   --color-gray: #1b1e26;
 
+  /* background colors */
+  --background-gradient: linear-gradient(
+    0deg,
+    rgba(25, 54, 105, 1) 0%,
+    rgba(5, 10, 19, 1) 100%
+  );
+
   /* size */
   --size-max-width: 1200px;
 
@@ -87,7 +94,7 @@ footer p {
 
 #home,
 footer {
-  background-color: var(--color-primary);
+  background: var(--background-gradient);
   color: var(--color-text);
   text-align: center;
   max-width: unset;
