@@ -1,5 +1,6 @@
 import debounce from './utils/debounce.js'
 import initObserver from './utils/observer.js'
+import initTypeIt from './utils/typeit.js'
 
 function handleScrollHeaderAndAside(headerEl, asideEl) {
   if (!headerEl) return
@@ -67,4 +68,5 @@ function setEventListeners() {
 ;(function init() {
   setEventListeners()
   initObserver()
+  initTypeIt()
 })()
