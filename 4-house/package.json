@@ -1,0 +1,20 @@
+{
+  "name": "4-house",
+  "version": "1.0.0",
+  "description": "tomorrow house project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/hypspace/lecture-vanilla-beginner.git",
+  "keywords": [
+    "html",
+    "css",
+    "scss",
+    "javascript",
+    "project"
+  ],
+  "author": "hypspace <hypspacecraft@gmail.com>",
+  "license": "ISC",
+  "bugs": "https://github.com/hypspace/lecture-vanilla-beginner/issues"
+}
