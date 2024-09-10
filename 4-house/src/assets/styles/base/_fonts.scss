@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'house';
+  // 브라우저 지원 여부 - woff: 현대(=대부분 브라우저) | ttf: 구형, svg: 구형 중 일부
+  src: url('./src/assets/fonts/house.woff') format('woff'),
+    url('./src/assets/fonts/house.ttf') format('truetype'),
+    url('./src/assets/fonts/house.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+i {
+  font-family: 'house';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: none;
+}
+
+.i-bell::before {
+  content: '\e900';
+}
+
+.i-bookmark::before {
+  content: '\e901';
+}
+
+.i-bookmark-filled::before {
+  content: '\e902';
+}
+
+.i-caret::before {
+  content: '\e903';
+}
+
+.i-cart::before {
+  content: '\e904';
+}
+
+.i-check::before {
+  content: '\e905';
+}
+
+.i-chevron::before {
+  content: '\e906';
+}
+
+.i-close::before {
+  content: '\e907';
+}
+
+.i-community::before {
+  content: '\e908';
+}
+
+.i-expert::before {
+  content: '\e909';
+}
+
+.i-lock::before {
+  content: '\e90a';
+}
+
+.i-logo::before {
+  content: '\e90b';
+}
+
+.i-menu::before {
+  content: '\e90c';
+}
+
+.i-new::before {
+  content: '\e90d';
+}
+
+.i-search::before {
+  content: '\e90e';
+}
+
+.i-star::before {
+  content: '\e90f';
+}
+
+.i-store::before {
+  content: '\e910';
+}
