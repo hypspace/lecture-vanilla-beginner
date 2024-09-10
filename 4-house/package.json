@@ -4,7 +4,8 @@
   "description": "tomorrow house project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -wr --source-map=true src/assets/styles/main.scss style.css"
   },
   "repository": "git+https://github.com/hypspace/lecture-vanilla-beginner.git",
   "keywords": [
@@ -16,5 +17,11 @@
   ],
   "author": "hypspace <hypspacecraft@gmail.com>",
   "license": "ISC",
-  "bugs": "https://github.com/hypspace/lecture-vanilla-beginner/issues"
+  "bugs": "https://github.com/hypspace/lecture-vanilla-beginner/issues",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
 }
