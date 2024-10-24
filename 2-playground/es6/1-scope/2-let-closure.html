@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>let and closure</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+
+    <script>
+      /* let과 Closure */
+
+      // - 설명:
+      //  - 개발하다보면 클로저라는 스코프가 생김. 클로저 변수가 생길 수 있고 클로저 함수가 생길 수 있음. 이로 인해 예기치 못한 동작이 있을 수 있는데 var 키워드로 선언된 변수가 이에 해당함
+      //  - JS에서 클로저는 함수가 끝난 이후에도 함수가 선언된 렉시컬 환경(스코프)를 기억하는 함수의 특성을 의미함
+      //  - 함수가 자신의 외부 스코프에 변수 등 접근할 수 있음
+      //  그래서 콜백에 i를 접근해도 최종값인 4로 접근 가능한 것
+
+      // 1. 예기치 못한 동작에 대한 예시
+      const li = document.querySelectorAll('li') // event-delegation(이벤트-위임)으로써 상위에서 효율적으로 하나만 이벤트를 걸어도 되지만 예기치 못한 동작 예시 이해를 돕기 위해 querySelectorAll함
+
+      for (var i = 0; i < li.length; i++) {
+        li[i].addEventListener('click', () => console.log(i))
+      }
+      /* 출력 결과:
+        4
+        4
+        4
+        4
+
+        설명: 
+         - for문에 할당식으로 표현된 var i는 곧 클로저 변수라 할 수 있음. 그래서 콜백 함수로부터 i를 접근하면 최종값인 4가 출력되는 것
+
+         - 이러한 문제를 해결하기 위한 방안으로 2가지 패턴이 있음. 블럭 스코프가 가지고 있던 변수의 값을 기억하게끔 만듦
+          - 지역 변수화: for문 안에 function-scope를 하나 더 만들어서 var i를 지역 변수화 시킴
+          - let: es6 let 키워드로 변수를 초기화함
+      */
+
+      // 2. 예기치 못한 동작 해결 방안
+      // - 지역 변수화
+      for (var a = 0; a < li.length; a++) {
+        function foo() {
+          var b = a
+          li[b].addEventListener('click', () => console.log(b))
+        }
+        foo()
+      }
+      /* 출력 결과:
+        0
+        1
+        2
+        3
+      */
+
+      // - 지역 변수화 + IIFE(즉시실행함수 활용)
+      for (var a = 0; a < li.length; a++) {
+        ;(function (b) {
+          li[b].addEventListener('click', () => console.log(b))
+        })(a)
+      }
+      /* 출력 결과:
+        0
+        1
+        2
+        3
+      */
+
+      // - let 사용
+      for (let l = 0; l < li.length; l++) {
+        // li[l].addEventListener('click', () => console.log(l))
+      }
+      /* 출력 결과:
+        0
+        1
+        2
+        3
+      */
+    </script>
+  </body>
+</html>
