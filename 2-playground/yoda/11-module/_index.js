@@ -1,4 +1,4 @@
-import { ReactDOM } from './react-dom.js'
+import { ReactDOM } from './_react-dom.js'
 
 // ReactDOM.render(<App />, document.getElementById('root'))
 
